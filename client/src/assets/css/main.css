@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local("Roboto"), url("../fonts/Roboto/Roboto-Medium.ttf") format("ttf");
+}
+
+:root {
+  --drawerLeftLogo: {
+    width: 32px;
+    height: 32px;
+    align-items: center;
+  }
+}
+.link-icon {
+  font-size: 1.3rem;
+  font-weight: bold;
+  width: 3.0rem;
+  margin-right: 0.2rem;
+}
+.link-text {
+  font-size: 0.9rem;
+  font-weight: bold;
+  width: 5.1rem;
+  margin: 5px;
+}

@@ -1,0 +1,148 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "http://www.essentia.com/loadstone/api/private-profile.schema.json",
+  "title": "Private Personal Profile",
+  "description": "Private profile of Self, only visible locally.",
+  "type": "object",
+  "properties": {
+    "validated": {
+      "type": "boolean",
+      "description": "Profile Validated by Server"
+    },
+    "GUID": {
+      "readOnly": true,
+      "type": "string",
+      "description": "Global Unique Identifier of Self"
+    },
+    "databaseKey": {
+      "readOnly": true,
+      "type": "string",
+      "description": "Database Key of Self"
+    },
+    "aliasGlobal": {
+      "type": "string",
+      "description": "Globally Visible Alias of Self"
+    },
+    "aliasLocal": {
+      "description": "Locally Visible Alias of Self",
+      "aliasName": {
+        "type": "string",
+        "description": "Alias Seen by Peers"
+      },
+      "aliasLevel": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 8,
+        "description": "Level that Local Alias becomes Visible"
+      }
+    },
+    "firstName": {
+      "type": "string",
+      "description": "First Name of Self"
+    },
+    "middleName": {
+      "type": "string",
+      "description": "Middle Name of Self"
+    },
+    "lastName": {
+      "type": "string",
+      "description": "Last Name of Self"
+    },
+    "gender": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Male",
+          "Female",
+          "Non-binary",
+          "Undefined"
+        ]
+      }
+    },
+    "age": {
+      "description": "Age in Years",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 102
+    },
+    "birthDate": {
+      "description": "Numerical Month, Day, and Year of Birth",
+      "birthMonth": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 12,
+        "description": "Birth Month"
+      },
+      "birthDay": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 31,
+        "description": "Birth Day"
+      },
+      "birthYear": {
+        "type": "integer",
+        "minimum": 1920,
+        "maximum": 2022,
+        "description": "Birth Year"
+      }
+    },
+    "email": {
+      "type": "string",
+      "description": "eMail of Self"
+    },
+    "mobilePhone": {
+      "type": "number",
+      "description": "Mobile Phone Number of Self"
+    },
+    "homePhone": {
+      "type": "number",
+      "description": "Home Phone Number of Self"
+    },
+    "baseAddress": {
+      "description": "Address of Base Location",
+      "baseStreetNumber": {
+        "type": "integer",
+        "description": "Base Street Number"
+      },
+      "baseStreet": {
+        "type": "string",
+        "description": "Base Street"
+      },
+      "baseCity": {
+        "type": "string",
+        "description": "Base City"
+      },
+      "basetState": {
+        "type": "string",
+        "description": "Base State"
+      },
+      "baseZIP": {
+        "type": "integer",
+        "minimum": 501,
+        "maximum": 99950,
+        "description": "Base ZIP Code"
+      }
+    },
+    "baseGeolocation": {
+      "description": "Geolocation of Base Location",
+      "baseLongitude": {
+        "type": "number",
+        "minimum": -180,
+        "maximum": 180,
+        "description": "Base Location Longitude"
+      },
+      "baselatitude": {
+        "type": "number",
+        "minimum": -90,
+        "maximum": 90,
+        "description": "Base Location Latitude"
+      }
+    },
+    "avatar" : {
+      "type" :"object",
+      "description": "Identifying Picture"
+    }
+  },
+  "required": ["GUID", "validated", "aliasGlobal", "firstName", "lastName"]
+}

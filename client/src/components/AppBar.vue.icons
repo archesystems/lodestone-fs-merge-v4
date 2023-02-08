@@ -1,0 +1,66 @@
+<template>
+  <v-app-bar app clipped-left class="app-bar" density="comfortable">
+    <v-app-bar-nav-icon left @click="menuStore.toggleDrawerLeft()" />
+    <v-app-bar-title class="app-bar-title" style="font-size: 22pt"
+      >LODESTONE</v-app-bar-title
+    >
+    <v-spacer></v-spacer>
+    <HomeLinkIcon />
+    <CloudLinkIcon />
+    <AlertsLinkIcon />
+    <HelpLinkIcon />
+    <AccountLinkIcon />
+  </v-app-bar>
+</template>
+
+<script>
+import { useMenuStore } from "../stores/MenuStore";
+import HomeLinkIcon from "./HomeLinkIcon.vue";
+import CloudLinkIcon from "./CloudLinkIcon.vue";
+import AlertsLinkIcon from "./AlertsLinkIcon.vue";
+import HelpLinkIcon from "./HelpLinkIcon.vue";
+import AccountLinkIcon from "./AccountLinkIcon.vue";
+
+export default {
+  name: "App",
+  components: {
+    HomeLinkIcon,
+    AlertsLinkIcon,
+    HelpLinkIcon,
+    CloudLinkIcon,
+    AccountLinkIcon,
+  },
+  setup() {
+    const menuStore = useMenuStore();
+
+    return { menuStore };
+  },
+  data: () => ({
+    items: [
+      { title: "Home", icon: "mdi-home", link: "/" },
+      { title: "Cloud", icon: "mdi-cloud-outline", link: "/cloud" },
+      { title: "Alerts", icon: "mdi-bell-ring-outline", link: "/alerts" },
+      { title: "Help", icon: "mdi-help-circle-outline", link: "/help" },
+      { title: "Account", icon: "mdi-account", link: "/account" },
+    ],
+  }),
+};
+</script>
+
+<style scoped>
+.app-bar-title {
+  font-family: "Teko", sans-serif;
+  font-weight: 500;
+  display: none;
+}
+
+@media (min-width: 632px) {
+  .app-bar-title {
+    display: block;
+  }
+}
+.google-teko-bold-font {
+  font-family: "Teko", sans-serif;
+  font-weight: 500;
+}
+</style>

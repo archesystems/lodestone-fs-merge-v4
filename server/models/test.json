@@ -1,0 +1,15 @@
+{
+  "$schema": "./loadstoneSchema.json",
+  "GUID": "a9c2ccfe-b9f2-4e92-b84d-3800076299e8",
+  "validated": true,
+  "aliasGlobal": "Essence",
+  "firstName": "Bill",
+  "lastName": "Watson",
+  "gender": ["Male"],
+  "age": 67,
+  "birthDate":{
+    "birthMonth": 7,
+    "birthDay": 8,
+    "birthYear": 1955
+  }
+}
